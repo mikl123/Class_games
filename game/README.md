@@ -1,12 +1,23 @@
 # Class_games
 Гра блукачка з 5 завдання реалізована за допомогою класів.
+
 Класи: Character, Friend, Enemy, Room, Item.
+
 Унаслідування:Character>Friend, Character>Enemy.
+
+
+* talk
+* fight
+* south
+* north
+* west
+* east
+
 Сюжет:
 Гравець потрапив в підземелля з кімнатами та монстрами. Йому потрібно перемогти монстрів щоб вижити.
+
 Управління:
 Гравець може спілкуватися, боротися та змінювати локації.
-(talk, fight, south/west)
 
 ![image](https://user-images.githubusercontent.com/69431189/225093270-bc40e0dd-6075-467a-9b71-e9210aa0fd6f.png)
 
