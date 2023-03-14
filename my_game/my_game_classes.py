@@ -16,7 +16,6 @@ class Street:
         self.name = name
         self.linked_sides = {}
         self.character = None
-        self.item = None
         self.description = ""
         self.apple_tree = False
         self.available_actions = ["вліво", "вправо"]
@@ -58,19 +57,6 @@ class Street:
         Getter for character
         """
         return self.character
-
-    def set_item(self, item):
-        """
-        Setter for item
-        """
-        self.item = item
-
-    def get_item(self):
-        """
-        Getter for item
-        """
-        return self.item
-
     def get_details(self):
         """
         Print details about room
