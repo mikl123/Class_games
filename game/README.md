@@ -5,7 +5,7 @@
 
 Унаслідування:Character>Friend, Character>Enemy.
 
-
+Механіки
 * talk
 * fight
 * south
