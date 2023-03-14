@@ -172,16 +172,11 @@ class Enemy(Character):
         self.patience = 0
         super().__init__(name, desc)
 
-    def fight(self, item):
+    def fight(self):
         """
         Fight method
         """
-        if self.weakness == item:
-            self.defeted = True
-            return True
-        else:
-            return False
-
+        self.defeted = True
     def get_patience(self):
         """
         Patience getter
@@ -253,10 +248,4 @@ class Item:
         """
         Print info about item
         """
-        print(f"The [{self.name}] is here - {self.description}")
-
-    def get_name(self):
-        """
-        Getter for name
-        """
-        return self.name
+        print(f"{self.description}")

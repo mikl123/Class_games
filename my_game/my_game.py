@@ -43,15 +43,14 @@ Knowledge.set_action("Я складу цей іспит")
 
 
 Gopnik = my_game_classes.Enemy("Лотр", "Негідник і розбійник")
-Gopnik.set_weakness("яблучко")
+Gopnik.set_weakness(Apple)
 Gopnik.set_conversation("Відавай все що маєш!!!")
 Gopnik2 = my_game_classes.Enemy("Розбійник", "Не дуже хороший хлопчик")
-Gopnik2.set_weakness("яблучко")
+Gopnik2.set_weakness(Apple)
 Gopnik2.set_conversation("Давай гроші")
 Seminar = my_game_classes.Enemy("Семінар з Мат. Аналізу", "Спосіб здобути знання")
-Seminar.set_weakness("терпіння")
 Session = my_game_classes.MathExam("Сесія з Мат. Аналізу", "Легендарний босс", 2)
-Session.set_weakness("знання")
+Session.set_weakness(Knowledge)
 
 Striyska.set_character(Session)
 Kozelnitska.set_character(Gopnik2)
@@ -97,7 +96,7 @@ while continue_game:
                 except ValueError:
                     print("Не правильний формат відповіді")
             print("Ти отримав знання")
-            inh.fight("терпіння")
+            inh.fight()
             current_street.del_available("вчитися")
             avoska.append("знання")
         elif action == "писати іспит":
@@ -136,13 +135,15 @@ while continue_game:
                 "Що ви хочете використати щоб протистояти поганому хлопчику > "
             )
             if item in avoska:
-                if item != "яблучко":
+                if item != inh.weakness.name:
+                    inh.weakness.describe()
                     print("А нащо мені це???")
                     print("Ти програв")
                     continue_game = False
                 else:
+                    inh.weakness.describe()
                     print("Ти віддав хулігану яблучко, він ввічливо подякуав і пішов.")
-                    inh.fight(item)
+                    inh.fight()
                     avoska.remove("яблучко")
                     current_street.del_available("протистояти")
             else:
